@@ -1,4 +1,4 @@
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
@@ -49,4 +49,5 @@ def user_registration(request):
 
 
 def logout(request):
-    logout()
+    auth.logout(request)
+    return redirect('/')
