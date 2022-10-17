@@ -30,9 +30,6 @@ def signin(request):
         user = authenticate(username=username, password=password)
 
         if user is not None:
-            print(" signin")
-            print(user)
-            print(user.id)
             return render(request, 'user_registration.html', {'user': user})
         else:
             messages.error(request, 'Wrong Credentials')
@@ -42,8 +39,8 @@ def signin(request):
 
 
 def user_registration(request):
-    print("in user reg")
-    print(request)
+    #print("in user reg")
+    #print(request)
 
     return render(request, 'user_registration.html')
 
