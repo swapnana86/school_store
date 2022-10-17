@@ -3,7 +3,8 @@
 {%block content %}
 <div>
     <h1> Hi welcome {{user.username}}</h1><p>Please Enter your details here!</p>
-  <form action="" method="post">
+  <form action="/user_registration" method="post">
+    {% csrf_token %}
   <ul class="wrapper">
     <li class="form-row">
       <label for="name">Name</label>
@@ -44,8 +45,17 @@
         <option value="Science">Science</option>
         <option value="Arts">Arts</option>
         <option value="Polytech">Polytech</option>
-         <option value="B-tech">B-tech</option>
+         <option value="B-tech">B-techu</option>
     </select>
+      <label for="course">Select Course</label>
+    <select name="course" id="course">
+        <option value="Commerce">Commerce</option>
+       <!-- <option value="Science">Science</option>
+        <option value="Arts">Arts</option>
+        <option value="Polytech">Polytech</option>
+         <option value="B-tech">B-techu</option>-->
+    </select>
+
     </li>
 
     <li class="form-row">
