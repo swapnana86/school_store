@@ -5,14 +5,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+          <div>
+               <button type="button" class="btn btn-secondary"><a href="/logout">Sign Out</a></button>
+          </div>
+
+            {% else %}
        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-          <div>
-               <button type="button" class="btn btn-secondary"><a href="/signout">Sign Out</a></button>
-          </div>
-
-
         <li class="nav-item">
           <a class="nav-link" href="/signup">REGISTER</a>
         </li>
@@ -33,5 +34,6 @@
        <div>
                <button type="button" class="btn btn-secondary"><a href="/signin">Sign In</a></button>
           </div>
+      {% endif %}
   </div>
 </nav>
